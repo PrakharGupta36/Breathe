@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breathe</title>
+  <link rel="stylesheet" href="app/styles/style.css">
+  <link rel="icon" href="assets/icons/icon.png">
+</head>
+<body>
+  <section id="vanta-canvas"></section>
+  <script src="app/js/app.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js" integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="three.r119.min.js"></script>
+  <script src="vanta.halo.min.js"></script>
+  <script>
+  VANTA.HALO({
+    el: "#vanta-canvas",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: true,
+    minHeight: 150.00,
+    minWidth: 150.00,
+    baseColor: 0x3a3aff,
+    backgroundColor: 0xf0f3a,
+    amplitudeFactor: 2.90,
+    size: 1.0
+  })
+</script>
+</body>
+</html>
