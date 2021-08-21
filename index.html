@@ -1,34 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breathe</title>
-  <link rel="stylesheet" href="app/styles/style.css">
-  <link rel="icon" href="assets/icons/icon.png">
-</head>
-<body>
-  <section id="vanta-canvas"></section>
-  <script src="app/js/app.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js" integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="three.r119.min.js"></script>
-  <script src="vanta.halo.min.js"></script>
-  <script>
-  VANTA.HALO({
-    el: "#vanta-canvas",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: true,
-    minHeight: 150.00,
-    minWidth: 150.00,
-    baseColor: 0x3a3aff,
-    backgroundColor: 0xf0f3a,
-    amplitudeFactor: 2.90,
-    size: 1.0
-  })
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breathe</title>
+    <link rel="stylesheet" href="app/styles/style.css" />
+    <link rel="icon" href="assets/icons/icon.svg" />
+  </head>
+  <body>
+    <section id="vanta-canvas-1"></section>
+    <section id="vanta-canvas-2"></section>
+    <header>
+      <nav>
+        <ul>
+          <div class="nav-logo">
+            <li>
+              <a href="index.html">
+                <img id="logo-img" src="assets/icons/icon.svg" alt="" />
+                <span id="logo"> Breathe </span>
+              </a>
+            </li>
+          </div>
+          <div class="nav-main">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Download Web App</a></li>
+            <li><a href="#">About</a></li>
+          </div>
+          <div class="nav-button">
+            <li><button>Login</button></li>
+            <li><button>Sign In</button></li>
+          </div>
+          <div class="nav-mobile">
+            <li>
+              <a href=""
+                ><img src="assets/icons/hamburger.svg" alt="hamburger"
+              /></a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <section class="hero-title">
+        <h1>Keep Calm and be in harmony with Breathe</h1>
+        <p>Ambient, Waterfall and Natures sound for your brain</p>
+      </section>
+    </header>
+
+    <script src="app/js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js"
+      integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="three.r119.min.js"></script>
+    <script src="vanta.halo.min.js"></script>
+    <script>
+      function myFunction(x) {
+        if (x.matches) {
+          // If media query matches
+          document.body.style.backgroundColor = VANTA.HALO({
+            el: "#vanta-canvas-1",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: true,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            baseColor: 0x3a3aff,
+            backgroundColor: 0xf0f3a,
+            amplitudeFactor: 0.25,
+            xOffset: 0,
+            yOffset:-.25,
+            size: 0.85,
+          });
+        } else {
+          document.body.style.backgroundColor = VANTA.HALO({
+            el: "#vanta-canvas-1",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: true,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            baseColor: 0x3a3aff,
+            backgroundColor: 0xf0f3a,
+            amplitudeFactor: 0.25,
+            xOffset: 0.28,
+            size: 0.85,
+          });
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 700px)");
+      myFunction(x); // Call listener function at run time
+      x.addListener(myFunction); // Attach listener function on state changes
+    </script>
+  </body>
 </html>

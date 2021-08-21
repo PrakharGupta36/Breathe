@@ -6,9 +6,123 @@
   padding: 0;
 }
 
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+button,a{
+  cursor: pointer;
+}
 
 html,body{
   max-width: 100%;
   overflow-x: hidden;
   margin: 0;
+}
+
+nav ul{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 1rem 0;
+  place-items: center;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  padding: 0 1rem;
+}
+
+#logo-img{
+  position: relative;
+  bottom: -.25rem;
+  right: .25rem;
+  font-size: 2rem;
+}
+
+#logo{
+  position: relative;
+  bottom: .5rem;
+  font-size: 2rem;
+}
+
+nav button{
+  background-color: transparent;
+  border: 3px solid white;
+  margin: 0 2rem;
+  border-radius: 25px;
+  color: white;
+  padding: .25rem 1rem;
+}
+
+.hero-title{
+  display: grid;
+
+}
+
+.hero-title{
+  display: grid;
+  color: white;
+  margin: 2rem 0;
+}
+
+.hero-title p{
+  color: gray;
+}
+
+@media only screen and (max-width:856px){
+    .nav-main,.nav-button{
+      display: none;
+    }
+    nav ul{
+      grid-template-columns: repeat(2,1fr);
+    }
+    .hero-title{
+      place-items: center;
+      width: 75%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .nav-logo,.nav-mobile{
+      justify-self: end;
+    }
+
+    .nav-mobile{
+      position: relative;
+      right: 1rem;
+      bottom: .25rem;
+    }
+
+    #logo-img{
+      display: none;
+    }
+}
+
+@media only screen and (min-width:857px){
+    .nav-mobile{
+      display: none;
+    }
+    .hero-title{
+      position: relative;
+      left: 8.25rem  ;
+    }
+
+    .hero-title h1{
+      width: 35%;
+      font-size: 3rem;
+    }
+
+    .hero-title p{
+      width: 25%;
+    }
 }
