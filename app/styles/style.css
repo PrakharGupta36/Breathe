@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url(./vanta.css);
+@import url(./mobile.css);
 
 *{
   font-family: Poppins;
@@ -88,18 +89,18 @@ nav button{
     }
     .hero-title{
       place-items: center;
-      width: 75%;
+      width: 70%;
       text-align: center;
-      margin: 0 auto;
+      margin: 2rem auto;
     }
 
     .nav-logo,.nav-mobile{
-      justify-self: end;
+      justify-self: center;
     }
 
     .nav-mobile{
       position: relative;
-      right: 1rem;
+      right: -2rem;
       bottom: .25rem;
     }
 
