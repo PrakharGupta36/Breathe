@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url(./vanta.css);
 @import url(./mobile.css);
+@import url(./googleButton.css);
 
 *{
   font-family: Poppins;
@@ -56,13 +57,10 @@ nav ul li a{
   font-size: 2rem;
 }
 
-nav button{
-  background-color: transparent;
-  border: 3px solid white;
-  margin: 0 2rem;
-  border-radius: 25px;
-  color: white;
-  padding: .25rem 1rem;
+#nav-button button{
+  padding: 2rem;
+  background: url(https://developers.google.com/identity/images/g-logo.png) center center no-repeat;
+  background-size: 100% 100%;
 }
 
 .hero-title{
@@ -74,11 +72,24 @@ nav button{
   display: grid;
   color: white;
   margin: 2rem 0;
+  position: relative;
+
+  place-items: start;
 }
 
 .hero-title p{
   color: gray;
 }
+
+#button1{
+  padding: .5rem 1rem;
+  background-color: white;
+  color: #2f006d;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
 
 @media only screen and (max-width:856px){
     .nav-main,.nav-button{
@@ -89,9 +100,10 @@ nav button{
     }
     .hero-title{
       place-items: center;
-      width: 70%;
+      width: 75%;
       text-align: center;
       margin: 2rem auto;
+        top: 1.25rem;
     }
 
     .nav-logo,.nav-mobile{
@@ -116,6 +128,7 @@ nav button{
     .hero-title{
       position: relative;
       left: 8.25rem  ;
+        top: 2rem;
     }
 
     .hero-title h1{
