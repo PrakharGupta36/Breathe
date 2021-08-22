@@ -8,6 +8,9 @@
     <title>Breathe</title>
     <link rel="stylesheet" href="app/styles/style.css" />
     <link rel="icon" href="assets/icons/icon.svg" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f0f3a">
+    <link rel="apple-touch-icon" href="assets/icons/icon.svg">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -135,6 +138,12 @@
       myFunction(x); // Call listener function at run time
       x.addListener(myFunction); // Attach listener function on state changes
     </script>
+    <script>
+      if ("serviceWorker" in navigator){
+        navigator.serviceWorker.register("./service-worker.js")
+      }
+    </script>
     <script src="app/js/nav.js"></script>
+    <script src="service-worker.js"></script>
   </body>
 </html>
