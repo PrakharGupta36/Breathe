@@ -34,6 +34,8 @@ auth.onAuthStateChanged((user) => {
   } else {
     whenSignedIn.style.display = "inline-block";
     whenSignedOut.style.display = "none";
-    window.location.href = "/index.html";
+    signOutbtn.onclick = () => {
+      window.location.href = "/index.html"
+    }
   }
 });
