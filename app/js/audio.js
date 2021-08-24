@@ -16,3 +16,21 @@ function toggleSound() {
     buttonAudio.textContent = "Listen Ambient Sound"
   }
 }
+
+let buttonAudio2 = document.getElementById("button2");
+let sounds2 = [];
+for (let i = 0; i < 3; i++) {
+  sounds2.push(`./assets/sound/meditation${i + 1}.mp3`);
+}
+let random2 = Math.floor(Math.random() * 3);
+var audioElem2 = document.getElementById("audio2");
+audioElem2.src = sounds[random];
+function toggleSound2() {
+  if (audioElem2.paused) {
+    audioElem2.play();
+    buttonAudio2.textContent = "Pause Ambient Sound";
+  } else {
+    audioElem2.pause();
+    buttonAudio2.textContent = "Listen Ambient Sound";
+  }
+}

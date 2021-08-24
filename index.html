@@ -68,7 +68,7 @@
               </div>
             </li>
             <li>
-              <div id="whenSignedOut" class="g-sign-in-button">
+              <div id="whenSignedOut" class=" g-sign-in-button">
                 <div class="content-wrapper" id="signOutbtn">
                   <div class="logo-wrapper">
                     <img
@@ -92,6 +92,7 @@
               /></a>
             </li>
           </div>
+          
         </ul>
       </nav>
       <section class="hero-title" id="hero-title">
@@ -102,24 +103,41 @@
             type="button"
             onclick="javascript:toggleSound();"
           >
-            Click to Toggle Sound
+            Listen Ambient Sounds
           </button>
-          
+          <div id="whenSignedIn2" class="g-sign-in-button auth">
+                <div class="content-wrapper" id="signInbtn2">
+                  <div class="logo-wrapper">
+                    <img
+                      src="https://developers.google.com/identity/images/g-logo.png"
+                    />
+                  </div>
+                  <span class="text-container">
+                    <span>Sign in with Google</span>
+                  </span>
+                </div>
+              </div>
         <audio id="audio" src="" loop>
         </audio>
       </section>
     </header>
     <main id="main">
       <p id='userWelcome'>  </p>
+      
       <section class="main-breathe" id="breathe">
+        
         <div class="input">
+          
       <label>Select Breaths</label>
+     
       <select class="breath-input">
         <option value="3">3 Breaths</option>
         <option value="5">5 Breaths</option>
         <option value="7">7 Breaths</option>
+        <option value="10">10 Breaths</option>
       </select>
     </div>
+    
     <div class="circle-wrap">
       <div class="circle-outline"></div>
       <div class="circle-progress"></div>
@@ -127,8 +145,18 @@
     <p class="breaths">Breaths remaining: <span class="breaths-text">3</span></p>
     <p class="instructions">Are you ready to start breathing?</p>
     <button class="start">Begin</button>
-      </section>
+   <button
+            id="button2"
+            type="button"
+            onclick="javascript:toggleSound2();"
+          >
+            Listen Ambient Sounds
+          </button>
+          
+        <audio id="audio2" src="" loop>   
+  </section>
     </main>
+    <script src="app/js/auth.js"></script>
     <script src="app/js/app.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
@@ -140,7 +168,7 @@
     ></script>
     <script src="three.r119.min.js"></script>
     <script src="vanta.halo.min.js"></script>
-    <script src="app/js/auth.js"></script>
+    
     <script>
       function myFunction(x) {
         if (x.matches) {

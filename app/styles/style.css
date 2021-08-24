@@ -1,75 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url(./vanta.css);
 @import url(./mobile.css);
 @import url(./googleButton.css);
 @import url(./main.css);
 
-*{
+* {
   font-family: Poppins;
   padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
 }
 
-button,a{
+button,
+a {
   cursor: pointer !important;
 }
 
-html,body{
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
   margin: 0;
 }
 
-nav ul{
+nav ul {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 1rem 0;
   place-items: center;
 }
 
-nav ul li{
+nav ul li {
   float: left;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   color: white;
   padding: 0 1rem;
 }
 
-#logo-img{
+#logo-img {
   position: relative;
-  bottom: -.25rem;
-  right: .25rem;
+  bottom: -0.25rem;
+  right: 0.25rem;
   font-size: 2rem;
 }
 
-#logo{
+#logo {
   position: relative;
-  bottom: .5rem;
+  bottom: 0.5rem;
   font-size: 2rem;
 }
 
-#nav-button button{
+#nav-button button {
   padding: 2rem;
-  background: url(https://developers.google.com/identity/images/g-logo.png) center center no-repeat;
+  background: url(https://developers.google.com/identity/images/g-logo.png)
+    center center no-repeat;
   background-size: 100% 100%;
 }
 
-.hero-title{
+.hero-title {
   display: grid;
-
 }
 
-.hero-title{
+.hero-title {
   display: grid;
   color: white;
   margin: 2rem 0;
@@ -78,12 +85,12 @@ nav ul li a{
   place-items: start;
 }
 
-.hero-title p{
+.hero-title p {
   color: gray;
 }
 
-#button1{
-  padding: .5rem 1rem;
+#button1 {
+  padding: 0.5rem 1rem;
   background-color: white;
   color: #2f006d;
   border-radius: 5px;
@@ -91,61 +98,83 @@ nav ul li a{
   border: 1px solid white;
 }
 
-
-@media only screen and (max-width:856px){
-    .nav-main,.nav-button{
-      display: none;
-    }
-    nav ul{
-      grid-template-columns: repeat(2,1fr);
-    }
-    .hero-title{
-      place-items: center;
-      width: 75%;
-      text-align: center;
-      margin: 2rem auto;
-        top: 1.25rem;
-    }
-
-    .nav-logo,.nav-mobile{
-      justify-self: center;
-    }
-
-    .nav-mobile{
-      position: relative;
-      right: -2rem;
-      bottom: .25rem;
-    }
-
-    #logo-img{
-      display: none;
-    }
-    
+#button2{
+  margin: 1rem 0;
 }
 
-@media only screen and (min-width:857px){
-    .nav-mobile{
-      display: none;
-    }
+@media only screen and (max-width: 856px) {
+  .nav-main,
+  .nav-button {
+    display: none;
+  }
+  nav ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  #whenSignedIn{
+    display: none;
+  }
+
+  .nav-mobile{
+    grid-column: 3;
+    position: relative;
+    bottom: .35rem;
+  }
+
+
+  .g-desktop {
+    display: none;
+  }
+
+  .hero-title {
+    place-items: center;
+    width: 75%;
+    text-align: center;
+    margin: 2rem auto;
+    bottom: 1.25rem;
+  }
+
+
+  #logo-img {
+    display: none;
+  }
+  .g-sign-out2 {
+    display: block;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .main-breathe{
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 857px) {
+  .nav-mobile {
+    display: none;
+  }
+
+  #whenSignedIn2{
+    display: none;
+  }
+
+  .g-sign-out2 {
+    display: none;
     
+  }
 
-    .g-mobile{
-      display: none;
-    }
+  .hero-title {
+    position: relative;
+    left: 8.25rem;
+    top: 2rem;
+  }
 
-    .hero-title{
-      position: relative;
-      left: 8.25rem  ;
-        top: 2rem;
-    }
+  .hero-title h1 {
+    width: 35%;
+    font-size: 3rem;
+  }
 
-    .hero-title h1{
-      width: 35%;
-      font-size: 3rem;
-    }
-
-    .hero-title p{
-      width: 25%;
-    }
+  .hero-title p {
+    width: 25%;
+  }
 }
