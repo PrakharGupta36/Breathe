@@ -16,26 +16,60 @@ signOutbtn.onclick = () => {
   auth.signOut();
 };
 
-let button1 = document.getElementById("button1"); 
-
-button1.onclick = () => {
-  if (auth.onAuthStateChanged === false) {
-    console.log("You are not logged in")
-  } else {
-
-  }
-}
+let main = document.getElementById("main");
+let userWelcome = document.getElementById("userWelcome");
 
 auth.onAuthStateChanged((user) => {
   if (user) {
     whenSignedIn.style.display = "none";
     whenSignedOut.style.display = "inline-block";
-    window.location.href = "/main.html";
+    document.body.style.backgroundColor = "#0f0f3a";
+    heroTitle.style.display = "none";
+    wallpaper.style.display = "none";
+    userWelcome.textContent = `Hello 👋 ${user.displayName}`;
+
   } else {
     whenSignedIn.style.display = "inline-block";
     whenSignedOut.style.display = "none";
-    signOutbtn.onclick = () => {
-      window.location.href = "/index.html"
-    }
+    document.body.style.backgroundColor = "none";
+    heroTitle.style.display = "grid";
+    wallpaper.style.display = "block";
+    navImage.style.display = "block";
+    heroTitle.animate(
+      [
+        // keyframes
+        { opacity: 0 },
+        { opacity: 1 },
+      ],
+      {
+        // timing options
+        duration: 2000,
+        iterations: 1,
+      }
+    );
+    document.body.animate(
+      [
+        // keyframes
+        { opacity: 0 },
+        { opacity: 1 },
+      ],
+      {
+        // timing options
+        duration: 1000,
+        iterations: 1,
+      }
+    );
+    wallpaper.animate(
+      [
+        // keyframes
+        { opacity: 0 },
+        { opacity: 1 },
+      ],
+      {
+        // timing options
+        duration: 1000,
+        iterations: 1,
+      }
+    );
   }
 });

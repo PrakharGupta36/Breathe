@@ -2,6 +2,7 @@
 @import url(./vanta.css);
 @import url(./mobile.css);
 @import url(./googleButton.css);
+@import url(./main.css);
 
 *{
   font-family: Poppins;
@@ -18,7 +19,7 @@ ul{
 }
 
 button,a{
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 html,body{
@@ -119,12 +120,20 @@ nav ul li a{
     #logo-img{
       display: none;
     }
+    
 }
 
 @media only screen and (min-width:857px){
     .nav-mobile{
       display: none;
     }
+
+    
+
+    .g-mobile{
+      display: none;
+    }
+
     .hero-title{
       position: relative;
       left: 8.25rem  ;
