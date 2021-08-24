@@ -26,12 +26,11 @@ let userWelcome = document.getElementById("userWelcome");
 let breathe = document.getElementById("breathe");
 auth.onAuthStateChanged((user) => {
   if (user) {
-    wallpaper.remove();
-    heroTitle.remove();
+    wallpaper.style.display = "none";
+    heroTitle.style.display = "none"
     whenSignedIn.style.display = "none";
     whenSignedOut.style.display = "inline-block";
     document.body.style.backgroundColor = "#0f0f3a";
-    // heroTitle.style.display = "none"
     breathe.style.display = "grid";
     userWelcome.style.display = "inline-block"
     userWelcome.textContent = `Hello 👋 ${user.displayName}`;
@@ -39,12 +38,9 @@ auth.onAuthStateChanged((user) => {
   } else {
     whenSignedIn.style.display = "inline-block";
     whenSignedOut.style.display = "none";
-    document.body.style.backgroundColor = "none";
-    let canvas = document.createElement("section");
-    canvas.setAttribute("id", "vanta-canvas-1");
-    document.body.appendChild(canvas);
-
-     breathe.style.display = "none";
+    wallpaper.style.display = "block";
+    heroTitle.style.display = "grid";
+    breathe.style.display = "none";
     userWelcome.style.display = "none";
     heroTitle.animate(
       [

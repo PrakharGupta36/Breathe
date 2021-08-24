@@ -86,7 +86,7 @@ nav ul li a {
 }
 
 .hero-title p {
-  color: gray;
+  color: rgb(216, 216, 219);
 }
 
 #button1 {
@@ -111,10 +111,8 @@ nav ul li a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  #whenSignedIn{
-    display: none;
-  }
-
+ 
+  
   .nav-mobile{
     grid-column: 3;
     position: relative;

@@ -6,12 +6,17 @@ let heroTitle = document.getElementById("hero-title");
 let wallpaper = document.getElementById("vanta-canvas-1");
 mobile.onclick = () => {
   if (navMain.style.display === "grid") {
+    if (main.style.display === "grid"){
+      wallpaper.style.display = "none";
+      heroTitle.style.display = "none";
+    } else if (main.style.display === "none") {
       wallpaper.style.display = "block";
-      
+      heroTitle.style.display = "grid";
+    }
       navMain.style.display = "none";
       document.body.style.backgroundColor = "none";
-      heroTitle.style.display = "grid";
-      navButton.style.display = "none";
+      
+    navButton.style.display = "none";
       navImage.src = "assets/icons/hamburger.svg";
       navMain.animate(
         [
