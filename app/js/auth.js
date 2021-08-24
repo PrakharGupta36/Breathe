@@ -18,7 +18,7 @@ signOutbtn.onclick = () => {
 
 let main = document.getElementById("main");
 let userWelcome = document.getElementById("userWelcome");
-
+let breathe = document.getElementById("breathe");
 auth.onAuthStateChanged((user) => {
   if (user) {
     whenSignedIn.style.display = "none";
@@ -26,6 +26,7 @@ auth.onAuthStateChanged((user) => {
     document.body.style.backgroundColor = "#0f0f3a";
     heroTitle.style.display = "none";
     wallpaper.style.display = "none";
+    breathe.style.display = "grid";
     userWelcome.textContent = `Hello 👋 ${user.displayName}`;
 
   } else {
@@ -34,6 +35,7 @@ auth.onAuthStateChanged((user) => {
     document.body.style.backgroundColor = "none";
     heroTitle.style.display = "grid";
     wallpaper.style.display = "block";
+     breathe.style.display = "none";
     navImage.style.display = "block";
     heroTitle.animate(
       [

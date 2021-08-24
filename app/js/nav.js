@@ -10,7 +10,7 @@ mobile.onclick = () => {
     navMain.style.display = "none";
     main.style.display = "grid";
     document.body.style.backgroundColor = "none";
-    heroTitle.style.display = "grid !important";
+    heroTitle.style.display = "grid";
     navButton.style.display = "none";
     navImage.src = "assets/icons/hamburger.svg";
     navMain.animate(
@@ -75,11 +75,11 @@ mobile.onclick = () => {
     );
   } else {
     navMain.style.display = "grid";
-    wallpaper.style.display = "none !important";
+    wallpaper.style.display = "none";
     document.body.style.backgroundColor = "#0f0f3a";
     navButton.style.display = "grid";
     main.style.display = "none";
-    heroTitle.style.display = "none !important";
+    heroTitle.style.display = "none";
     navImage.src = "assets/icons/close.svg";
     navMain.animate(
       [
