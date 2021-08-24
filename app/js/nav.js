@@ -7,11 +7,11 @@ let wallpaper = document.getElementById("vanta-canvas-1");
 mobile.onclick = () => {
   if (navMain.style.display === "grid") {
     if (main.style.display === "grid"){
-      wallpaper.style.display = "none";
-      heroTitle.style.display = "none";
+      wallpaper.hidden = false;
+      heroTitle.hidden = false;
     } else if (main.style.display === "none") {
-      wallpaper.style.display = "block";
-      heroTitle.style.display = "grid";
+      wallpaper.hidden = true;
+      heroTitle.hidden = true;
     }
       navMain.style.display = "none";
       document.body.style.backgroundColor = "none";
@@ -80,10 +80,10 @@ mobile.onclick = () => {
       );
     } else {
     navMain.style.display = "grid";
-    wallpaper.style.display = "none";
+    wallpaper.hidden = false;
     document.body.style.backgroundColor = "#0f0f3a";
     navButton.style.display = "grid";
-    heroTitle.style.display = "none";
+    heroTitle.hidden = false
     navImage.src = "assets/icons/close.svg";
     navMain.animate(
       [
