@@ -1,233 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ambient, Waterfall and Natures sound for your brain"
-    />
-    <title>Breathe</title>
-    <link rel="stylesheet" href="app/styles/style.css" />
-    <link rel="icon" href="assets/icons/icon.svg" />
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#0f0f3a" />
-    <link rel="apple-touch-icon" href="assets/icons/icon.svg" />
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyBHoeSOfB8GArspz6Lk-iRymyJ_fYIL01A",
-        authDomain: "breathe-926c8.firebaseapp.com",
-        projectId: "breathe-926c8",
-        storageBucket: "breathe-926c8.appspot.com",
-        messagingSenderId: "638220003925",
-        appId: "1:638220003925:web:3ef1ab0aae4abaedb802dc",
-        measurementId: "G-1J683N2RDG",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-  </head>
-  <body>
-    <section id="vanta-canvas-1"></section>
-    <header>
-      <nav>
-        <ul id="nav-bar">
-          <div class="nav-logo">
-            <li>
-              <a href="index.html">
-                <img id="logo-img" src="assets/icons/icon.svg" alt="" />
-                <span id="logo"> Breathe </span>
-              </a>
-            </li>
-          </div>
-          <div class="nav-main" id="nav-main">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="javascript:void(0);" id="pwa">Download Web App</a></li>
-            <li><a href="#">About</a></li>
-          </div>
-          <div class="nav-button" id="nav-button">
-            <li>
-              <div id="whenSignedIn" class="g-sign-in-button auth">
-                <div class="content-wrapper" id="signInbtn">
-                  <div class="logo-wrapper">
-                    <img
-                      src="https://developers.google.com/identity/images/g-logo.png"
-                    />
-                  </div>
-                  <span class="text-container">
-                    <span>Sign in with Google</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div id="whenSignedOut" class=" g-sign-in-button">
-                <div class="content-wrapper" id="signOutbtn">
-                  <div class="logo-wrapper">
-                    <img
-                      src="https://developers.google.com/identity/images/g-logo.png"
-                    />
-                  </div>
-                  <span class="text-container">
-                    <span>Sign Out</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </div>
-          <div class="nav-mobile">
-            <li>
-              <a href="javascript:void(0);" id="mobile"
-                ><img
-                  src="assets/icons/hamburger.svg"
-                  id="nav-img"
-                  alt="hamburger"
-              /></a>
-            </li>
-          </div>
-          
-        </ul>
-      </nav>
-      <section class="hero-title" id="hero-title">
-        <h1>Keep Calm and be in harmony with Breathe</h1>
-        <p>Ambient, Waterfall and Natures sound for your brain</p>
-          <button
-            id="button1"
-            type="button"
-            onclick="javascript:toggleSound();"
-          >
-            Listen Ambient Sounds
-          </button>
-          <div id="whenSignedIn2" class="g-sign-in-button auth">
-                <div class="content-wrapper" id="signInbtn2">
-                  <div class="logo-wrapper">
-                    <img
-                      src="https://developers.google.com/identity/images/g-logo.png"
-                    />
-                  </div>
-                  <span class="text-container">
-                    <span>Sign in with Google</span>
-                  </span>
-                </div>
-              </div>
-        <audio id="audio" src="" loop>
-        </audio>
-      </section>
-    </header>
-
-    <main id="main">
-      <p id='userWelcome'>  </p>
-      
-      <section class="main-breathe" id="breathe">
-        
-        <div class="input">
-          
-      <label>Select Breaths</label>
-     
-      <select class="breath-input">
-        <option value="3">3 Breaths</option>
-        <option value="5">5 Breaths</option>
-        <option value="7">7 Breaths</option>
-        <option value="10">10 Breaths</option>
-      </select>
-    </div>
-    
-    <div class="circle-wrap">
-      <div class="circle-outline"></div>
-      <div class="circle-progress"></div>
-    </div>
-    <p class="breaths">Breaths remaining: <span class="breaths-text">3</span></p>
-    <p class="instructions">Are you ready to start breathing?</p>
-    <button class="start">Begin</button>
-   <button
-            id="button2"
-            type="button"
-            onclick="javascript:toggleSound2();"
-          >
-            Listen Ambient Sounds
-          </button>
-          
-        <audio id="audio2" src="" loop>   
-  </section>
-  <div id="whenSignedOut2" class=" g-sign-in-button">
-                <div class="content-wrapper" id="signOutbtn2">
-                  <div class="logo-wrapper">
-                    <img
-                      src="https://developers.google.com/identity/images/g-logo.png"
-                    />
-                  </div>
-                  <span class="text-container">
-                    <span>Sign Out</span>
-                  </span>
-                </div>
-              </div>
-    </main>
-    <script src="app/js/auth.js"></script>
-    <script src="app/js/app.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js"
-      integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="three.r119.min.js"></script>
-    <script src="vanta.halo.min.js"></script>
-    
-    <script>
-      function myFunction(x) {
-        if (x.matches) {
-          // If media query matches
-          document.body.style.backgroundColor = VANTA.HALO({
-            el: "#vanta-canvas-1",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: true,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            baseColor: 0x3a3aff,
-            backgroundColor: 0xf0f3a,
-            amplitudeFactor: 0.25,
-            xOffset: 0,
-            yOffset: -0.25,
-            size: 0.85,
-          });
-        } else {
-          document.body.style.backgroundColor = VANTA.HALO({
-            el: "#vanta-canvas-1",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: true,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            baseColor: 0x3a3aff,
-            backgroundColor: 0xf0f3a,
-            amplitudeFactor: 0.25,
-            xOffset: 0.28,
-            size: 0.85,
-          });
-        }
-      }
-
-      var x = window.matchMedia("(max-width: 700px)");
-      myFunction(x); // Call listener function at run time
-      x.addListener(myFunction); // Attach listener function on state changes
-    </script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./service-worker.js");
-      }
-    </script>
-    <script src="app/js/nav.js"></script>
-    <script src="app/js/audio.js"></script>
-    <script src="service-worker.js"></script>
-  </body>
+<html lang=en>
+<head>
+<meta charset=UTF-8 />
+<meta http-equiv=X-UA-Compatible content="IE=edge" />
+<meta name=viewport content="width=device-width, initial-scale=1.0" />
+<meta name=description content="Ambient, Waterfall and Natures sound for your brain" />
+<title>Breathe</title>
+<link rel=stylesheet href=app/styles/style.css>
+<link rel=icon href=assets/icons/icon.svg />
+<link rel=manifest href=manifest.json />
+<meta name=theme-color content=#0f0f3a />
+<link rel=apple-touch-icon href=assets/icons/icon.svg />
+<script src=https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js></script>
+<script src=https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js></script>
+<script src=https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js></script>
+<script>var firebaseConfig={apiKey:"AIzaSyBHoeSOfB8GArspz6Lk-iRymyJ_fYIL01A",authDomain:"breathe-926c8.firebaseapp.com",projectId:"breathe-926c8",storageBucket:"breathe-926c8.appspot.com",messagingSenderId:"638220003925",appId:"1:638220003925:web:3ef1ab0aae4abaedb802dc",measurementId:"G-1J683N2RDG"};firebase.initializeApp(firebaseConfig);firebase.analytics();</script>
+</head>
+<body>
+<section id=vanta-canvas-1></section>
+<header>
+<nav>
+<ul id=nav-bar>
+<div class=nav-logo>
+<li>
+<a href=index.html>
+<img id=logo-img src=assets/icons/icon.svg alt />
+<span id=logo> Breathe </span>
+</a>
+</li>
+</div>
+<div class=nav-main id=nav-main>
+<li><a href=index.html>Home</a></li>
+<li><a href=javascript:void(0) id=pwa>Download Web App</a></li>
+<li><a href=#>About</a></li>
+</div>
+<div class=nav-button id=nav-button>
+<li>
+<div id=whenSignedIn class="g-sign-in-button auth">
+<div class=content-wrapper id=signInbtn>
+<div class=logo-wrapper>
+<img src=https://developers.google.com/identity/images/g-logo.png />
+</div>
+<span class=text-container>
+<span>Sign in with Google</span>
+</span>
+</div>
+</div>
+</li>
+<li>
+<div id=whenSignedOut class=g-sign-in-button>
+<div class=content-wrapper id=signOutbtn>
+<div class=logo-wrapper>
+<img src=https://developers.google.com/identity/images/g-logo.png />
+</div>
+<span class=text-container>
+<span>Sign Out</span>
+</span>
+</div>
+</div>
+</li>
+</div>
+<div class=nav-mobile>
+<li>
+<a href=javascript:void(0) id=mobile><img src=assets/icons/hamburger.svg id=nav-img alt=hamburger /></a>
+</li>
+</div>
+</ul>
+</nav>
+<section class=hero-title id=hero-title>
+<h1>Keep Calm and be in harmony with Breathe</h1>
+<p>Ambient, Waterfall and Natures sound for your brain</p>
+<button id=button1 type=button onclick=javascript:toggleSound()>
+Listen Ambient Sounds
+</button>
+<div id=whenSignedIn2 class="g-sign-in-button auth">
+<div class=content-wrapper id=signInbtn2>
+<div class=logo-wrapper>
+<img src=https://developers.google.com/identity/images/g-logo.png />
+</div>
+<span class=text-container>
+<span>Sign in with Google</span>
+</span>
+</div>
+</div>
+<audio id=audio src loop>
+</audio>
+</section>
+</header>
+<main id=main>
+<p id=userWelcome> </p>
+<section class=main-breathe id=breathe>
+<div class=input>
+<label>Select Breaths</label>
+<select class=breath-input>
+<option value=3>3 Breaths</option>
+<option value=5>5 Breaths</option>
+<option value=7>7 Breaths</option>
+<option value=10>10 Breaths</option>
+</select>
+</div>
+<div class=circle-wrap>
+<div class=circle-outline></div>
+<div class=circle-progress></div>
+</div>
+<p class=breaths>Breaths remaining: <span class=breaths-text>3</span></p>
+<p class=instructions>Are you ready to start breathing?</p>
+<button class=start>Begin</button>
+<button id=button2 type=button onclick=javascript:toggleSound2()>
+Listen Ambient Sounds
+</button>
+<audio id=audio2 src loop>
+</section>
+<div id=whenSignedOut2 class=g-sign-in-button>
+<div class=content-wrapper id=signOutbtn2>
+<div class=logo-wrapper>
+<img src=https://developers.google.com/identity/images/g-logo.png />
+</div>
+<span class=text-container>
+<span>Sign Out</span>
+</span>
+</div>
+</div>
+</main>
+<script src=app/js/auth.js></script>
+<script src=app/js/app.js></script>
+<script src=https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.halo.min.js integrity="sha512-gPRGPaui476r3yjwnkPfJbQYj3PF+1Mg4NLXyBbIaI7KRAGH8oypZnC0PeZ5JpgbaOO20IpVCiGCS3VYinjkqg==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=three.r119.min.js></script>
+<script src=vanta.halo.min.js></script>
+<script>function myFunction(a){if(a.matches){document.body.style.backgroundColor=VANTA.HALO({el:"#vanta-canvas-1",mouseControls:true,touchControls:true,gyroControls:true,minHeight:200,minWidth:200,baseColor:3816191,backgroundColor:986938,amplitudeFactor:0.25,xOffset:0,yOffset:-0.25,size:0.85})}else{document.body.style.backgroundColor=VANTA.HALO({el:"#vanta-canvas-1",mouseControls:true,touchControls:true,gyroControls:true,minHeight:200,minWidth:200,baseColor:3816191,backgroundColor:986938,amplitudeFactor:0.25,xOffset:0.28,size:0.85})}}var x=window.matchMedia("(max-width: 700px)");myFunction(x);x.addListener(myFunction);</script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./service-worker.js")};</script>
+<script src=app/js/nav.js></script>
+<script src=app/js/audio.js></script>
+<script src=service-worker.js></script>
+</body>
 </html>
