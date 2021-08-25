@@ -152,8 +152,13 @@ nav ul li a {
     display: none;
   }
 
-  #whenSignedIn2{
+  #whenSignedIn2,#whenSignedOut2{
     display: none;
+    
+  }
+
+  #signOutbtn2{
+    margin-top: 10rem;
   }
 
   .g-sign-out2 {

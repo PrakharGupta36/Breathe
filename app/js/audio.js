@@ -24,7 +24,7 @@ for (let i = 0; i < 3; i++) {
 }
 let random2 = Math.floor(Math.random() * 3);
 var audioElem2 = document.getElementById("audio2");
-audioElem2.src = sounds[random];
+audioElem2.src = sounds2[random2];
 function toggleSound2() {
   if (audioElem2.paused) {
     audioElem2.play();
