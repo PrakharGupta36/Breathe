@@ -1,8 +1,8 @@
 {
-  "name":"Breathe",
-  "short_name":"Breathe",
-  "start_url":"/?home=true",
-  "icons":[
+  "name": "Breathe",
+  "short_name": "Breathe",
+  "start_url": "/?home=true",
+  "icons": [
     {
       "src": "icons/manifest-icon-192.png",
       "sizes": "192x192",
@@ -16,8 +16,8 @@
       "purpose": "maskable any"
     }
   ],
-  "theme_color":"#FFFFFF",
-  "background_color":"#0f0f3a",
-  "display":"standalone",
-  "orientation":"portrait"
+  "theme_color": "#0b0be7",
+  "background_color": "#0f0f3a",
+  "display": "standalone",
+  "orientation": "portrait"
 }
